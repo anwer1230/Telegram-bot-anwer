@@ -1,0 +1,9 @@
+flask==2.3.3
+python-telegram-bot==20.4
+requests==2.31.0
+python-dotenv==1.0.0
+gunicorn==21.2.0
+pyrogram==2.0.0
+tgcrypto==1.2.5
+telethon==1.28.5
+aiohttp==3.9.1

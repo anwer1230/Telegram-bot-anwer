@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>مركز سرعة انجاز للخدمات الطلابية والأكاديمية</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="description" content="مركز سرعة انجاز للخدمات الطلابية والأكاديمية - نظام التليجرام التلقائي">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="مركز سرعة انجاز">
+
+    <!-- أيقونات Apple -->
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/static/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/static/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="384x384" href="/static/icons/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/static/icons/icon-512x512.png">
+
+    <!-- أيقونات عامة -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/icon-72x72.png">
+    <link rel="shortcut icon" href="/static/icons/icon-96x96.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .header-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+        .whatsapp-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-link:hover {
+            color: #128C7E;
+            transform: scale(1.05);
+        }
+        .log-container {
+            height: 300px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .console-container {
+            height: 250px;
+            overflow-y: auto;
+            background: #212529;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            color: #28a745;
+            font-family: 'Courier New', monospace;
+        }
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .log-success {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+        .log-error {
+            background: #f8d7da;
+            color: #842029;
+        }
+        .log-warning {
+            background: #fff3cd;
+            color: #664d03;
+        }
+        .log-info {
+            background: #cff4fc;
+            color: #055160;
+        }
+        .log-time {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .console-line {
+            margin-bottom: 2px;
+            font-size: 12px;
+        }
+        .monitoring-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+
+        .alert-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            min-width: 400px;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .keyword-alert {
+            animation: alertBounce 0.5s ease-in-out;
+        }
+
+        @keyframes alertBounce {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        /* تحسين الشكل للجوال */
+        @media (max-width: 768px) {
+            .container-fluid {
+                padding: 10px;
+            }
+            .card-body {
+                padding: 15px;
+            }
+            .log-container, .console-container {
+                height: 200px;
+            }
+            .header-title {
+                padding: 20px;
+            }
+            .header-title h2 {
+                font-size: 1.5rem;
+            }
+            .alert-popup {
+                min-width: 90vw;
+                max-width: 95vw;
+            }
+        }
+
+        /* زر التثبيت */
+        .install-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .install-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+            background: linear-gradient(45deg, #218838, #1e7e34);
+        }
+
+        .install-btn i {
+            margin-left: 8px;
+        }
+
+        .pwa-features {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .pwa-features small {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+        }
+
+        /* أنماط شريط المستخدمين */
+        .users-bar .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .user-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .user-tab {
+            border: 2px solid transparent;
+            border-radius: 25px;
+            padding: 8px 15px;
+            margin: 2px;
+            font-weight: bold;
+            background: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.9);
+        }
+
+        .user-tab.active {
+            background: rgba(0,0,0,0.1);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .user-tab.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(0,0,0,0.05));
+            border-radius: 23px;
+        }
+
+        .user-tab i {
+            font-size: 1.1em;
+        }
+
+        /* تحسين شكل المستخدمين للجوال */
+        @media (max-width: 768px) {
+            .user-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .user-tab {
+                width: 200px;
+                text-align: center;
+            }
+        }
+
+        /* إضافة تأثير النبضة للمستخدم النشط */
+        .user-tab.active {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+            50% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+            100% { box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <!-- شريط المستخدمين في الأعلى -->
+        <div class="users-bar mb-4">
+            <div class="card">
+                <div class="card-body py-2">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap">
+                        <small class="text-muted me-3 mb-2">اختر المستخدم:</small>
+                        <div class="user-tabs">
+                            {% for user_id, user_data in predefined_users.items() %}
+                            <button class="btn user-tab {% if user_id == current_user.id %}active{% endif %}" 
+                                    data-user-id="{{ user_id }}"
+                                    style="color: {{ user_data.color }}; border-color: {{ user_data.color }};">
+                                <i class="{{ user_data.icon }} me-2"></i>
+                                {{ user_data.name }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <small class="text-info">
+                            <i class="fas fa-info-circle me-1"></i>
+                            المستخدم الحالي: <strong style="color: {{ current_user.color }};">{{ current_user.name }}</strong>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- مساحة للتنبيهات -->
+        <div id="alertContainer"></div>
+
+        <!-- مؤشر حالة المراقبة -->
+        <div class="monitoring-status">
+            <span id="monitoringIndicator" class="badge bg-secondary">
+                <i class="fas fa-circle"></i> غير نشط
+            </span>
+        </div>
+
+        <!-- العنوان الرئيسي الجديد -->
+        <div class="header-title">
+            <h2 class="mb-3">
+                <i class="fas fa-graduation-cap me-2"></i>
+                📚 تصميم وتنفيذ مركز سرعة انجاز
+            </h2>
+            <h4 class="mb-3">للخدمات الطلابية والأكاديمية</h4>
+            <p class="mb-2">
+                <i class="fab fa-whatsapp me-2"></i>
+                واتساب: 
+                <a href="https://wa.me/+966510349663" class="whatsapp-link" target="_blank">
+                    +966510349663
+                </a>
+            </p>
+            <div class="mt-3">
+                <small id="connectionStatus" class="badge bg-secondary">
+                    {% if connection_status == 'connected' %}
+                        <i class="fas fa-circle text-success"></i> متصل
+                    {% else %}
+                        <i class="fas fa-circle text-danger"></i> غير متصل
+                    {% endif %}
+                </small>
+            </div>
+
+            <!-- زر تثبيت التطبيق -->
+            <div class="text-center mt-3">
+                <button id="installAppBtn" class="btn install-btn" style="display: inline-block;">
+                    <i class="fas fa-download"></i>
+                    تثبيت التطبيق على الجوال
+                </button>
+
+                <div class="pwa-features">
+                    <small><i class="fas fa-mobile-alt"></i> يعمل على جميع الأجهزة</small>
+                    <small><i class="fas fa-wifi"></i> يعمل بدون إنترنت</small>
+                    <small><i class="fas fa-bell"></i> إشعارات فورية</small>
+                    <small><i class="fas fa-rocket"></i> سرعة عالية</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- لوحة تسجيل الدخول -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2 class="mb-1">
+                            <i class="fas fa-telegram-plane me-2"></i>
+                            تسجيل الدخول
+                        </h2>
+                        <small id="connectionStatusHeader" class="badge bg-secondary">
+                            {% if connection_status == 'connected' %}
+                                <i class="fas fa-circle text-success"></i> متصل
+                            {% else %}
+                                <i class="fas fa-circle text-danger"></i> غير متصل
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">رقم الهاتف</label>
+                                <input type="tel" class="form-control" id="phone"
+                                        placeholder="+966xxxxxxxxx"
+                                        value="{{ settings.phone or '' }}"
+                                       required>
+                                <div class="form-text">أدخل رقم الهاتف مع رمز الدولة</div>
+                            </div>
+
+                            <div class="mb-3" id="passwordDiv" style="display: none;">
+                                <label for="password" class="form-label">كلمة مرور التليجرام (اختيارية)</label>
+                                <input type="password" class="form-control" id="password"
+                                        placeholder="كلمة المرور للتحقق الثنائي">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-2" id="loginButtonContainer">
+                                    <button type="submit" class="btn btn-primary w-100" id="loginBtn">
+                                        <i class="fas fa-sign-in-alt me-2"></i>
+                                        تسجيل الدخول
+                                    </button>
+                                </div>
+
+                                <!-- أزرار إدارة الجلسة - تظهر بعد تسجيل الدخول -->
+                                <div class="col-md-6 mb-2" id="sessionControls" style="display: none;">
+                                    <button type="button" class="btn btn-danger w-100" id="logoutButton">
+                                        <i class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج
+                                    </button>
+                                    <small class="text-muted d-block mt-1 text-center">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        إنهاء جلسة التليجرام نهائياً
+                                    </small>
+                                </div>
+                                
+                            </div>
+                        </form>
+
+                        <!-- نموذج التحقق من الكود -->
+                        <form id="verifyForm" style="display: none;">
+                            <div class="mb-3">
+                                <label for="verificationCode" class="form-label">كود التحقق</label>
+                                <input type="text" class="form-control" id="verificationCode"
+                                        placeholder="أدخل كود التحقق المرسل">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="fas fa-check me-2"></i>
+                                تأكيد الكود
+                            </button>
+                        </form>
+
+                        <!-- نموذج كلمة المرور -->
+                        <form id="passwordForm" style="display: none;">
+                            <div class="mb-3">
+                                <label for="twoFactorPassword" class="form-label">كلمة مرور التحقق الثنائي</label>
+                                <input type="password" class="form-control" id="twoFactorPassword"
+                                        placeholder="أدخل كلمة المرور">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="fas fa-unlock me-2"></i>
+                                تأكيد كلمة المرور
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- إحصائيات الإرسال -->
+                <div class="card mt-3">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            إحصائيات الإرسال
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <h3 class="text-success" id="sentCount">0</h3>
+                                <small>رسائل مرسلة</small>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="text-danger" id="errorCount">0</h3>
+                                <small>أخطاء</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نظام الانضمام التلقائي للمجموعات -->
+                <div class="card mt-3">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-users-cog me-2"></i>
+                            الانضمام التلقائي للمجموعات
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="autoJoinForm">
+                            <div class="mb-3">
+                                <label for="groupLinks" class="form-label">روابط المجموعات</label>
+                                <textarea class="form-control" id="groupLinks" rows="4"
+                                          placeholder="ضع هنا روابط المجموعات أو نصوص تحتوي على روابط (سيتم استخراج الروابط تلقائياً)&#10;مثال:&#10;https://t.me/group1&#10;انضم إلى https://t.me/group2 للاستفادة&#10;@group3"></textarea>
+                                <div class="form-text">يمكن إضافة الروابط مع نصوص أخرى، سيتم استخراج الروابط تلقائياً</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <button type="submit" class="btn btn-warning w-100" id="extractLinksBtn">
+                                        <i class="fas fa-filter me-2"></i>
+                                        استخراج الروابط
+                                    </button>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <button type="button" class="btn btn-success w-100" id="startAutoJoinBtn" disabled>
+                                        <i class="fas fa-play me-2"></i>
+                                        بدء الانضمام التلقائي
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- الروابط المستخرجة -->
+                        <div id="extractedLinksContainer" style="display: none;" class="mt-3">
+                            <h6><i class="fas fa-link me-2"></i>الروابط المستخرجة:</h6>
+                            <div id="extractedLinksList" class="alert alert-info"></div>
+                        </div>
+
+                        <!-- إحصائيات الانضمام -->
+                        <div class="mt-3">
+                            <h6><i class="fas fa-chart-pie me-2"></i>إحصائيات الانضمام:</h6>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h4 class="text-success" id="joinSuccessCount">0</h4>
+                                    <small>نجح</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-danger" id="joinFailCount">0</h4>
+                                    <small>فشل</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-info" id="alreadyJoinedCount">0</h4>
+                                    <small>منضم مسبقاً</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- حالة الانضمام الحالية -->
+                        <div id="joinStatusContainer" style="display: none;" class="mt-3">
+                            <div class="alert alert-primary">
+                                <i class="fas fa-spinner fa-spin me-2"></i>
+                                <span id="joinStatusText">جاري الانضمام...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- لوحة الإعدادات -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-cog me-2"></i>
+                            إعدادات المراقبة والإرسال
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="settingsForm">
+                            <div class="mb-3">
+                                <label for="message" class="form-label">الرسالة</label>
+                                <textarea class="form-control" id="message" rows="3"
+                                          placeholder="اكتب الرسالة المراد إرسالها">{{ settings.message or '' }}</textarea>
+                            </div>
+
+                            <!-- قسم رفع الصور المحسن -->
+                            <div class="mb-3">
+                                <label for="imageUpload" class="form-label">
+                                    <i class="fas fa-image me-2"></i>إضافة صور للرسالة (اختياري)
+                                </label>
+                                
+                                <!-- منطقة السحب والإفلات -->
+                                <div id="dropZone" class="border border-2 border-dashed border-secondary rounded p-4 text-center mb-3" 
+                                     style="min-height: 120px; cursor: pointer; transition: all 0.3s ease;">
+                                    <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-2"></i>
+                                    <h6 class="text-muted">اسحب الصور هنا أو انقر للاختيار</h6>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        يدعم: JPG, PNG, GIF, WebP | الحد الأقصى: 10MB لكل صورة
+                                    </p>
+                                    <input type="file" class="d-none" id="imageUpload" 
+                                           accept="image/jpeg,image/png,image/gif,image/webp" multiple>
+                                </div>
+                                
+                                <!-- معاينة الصور المرفوعة -->
+                                <div id="imagePreview" class="mt-3" style="display: none;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="mb-0"><i class="fas fa-images me-2 text-primary"></i>الصور المحددة (<span id="imageCount">0</span>)</h6>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" id="clearImages">
+                                            <i class="fas fa-trash me-1"></i>مسح الكل
+                                        </button>
+                                    </div>
+                                    <div id="imagePreviewContainer" class="row g-2"></div>
+                                    <div class="alert alert-info mt-2 py-2" id="imageSendInfo">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        <strong>ملاحظة:</strong> ستُرسل الصور مع الرسالة النصية معاً في نفس الرسالة
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="groups" class="form-label">مجموعات الإرسال</label>
+                                <textarea class="form-control" id="groups" rows="4"
+                                          placeholder="ضع كل مجموعة في سطر منفصل (@username أو اسم المجموعة)">{{ '\n'.join(settings.groups or []) }}</textarea>
+                                <div class="form-text">
+                                    📤 هذه المجموعات للإرسال فقط - المراقبة تشمل كامل الحساب تلقائياً
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="watchWords" class="form-label">كلمات المراقبة (اختيارية)</label>
+                                <textarea class="form-control" id="watchWords" rows="3"
+                                          placeholder="ضع كل كلمة في سطر منفصل (اتركها فارغة لمراقبة كل الرسائل)">{{ '\n'.join(settings.watch_words or []) }}</textarea>
+                                <div class="form-text">
+                                    ⚠️ المراقبة تشمل كامل المجموعات والمحادثات في الحساب
+                                    <br>🔹 إذا حددت كلمات: سيتم التنبيه عند ورود هذه الكلمات فقط
+                                    <br>🔹 إذا تركتها فارغة: سيتم التنبيه لكل الرسائل الجديدة
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="sendType" class="form-label">نوع الإرسال</label>
+                                <select class="form-select" id="sendType">
+                                    <option value="manual" {{ 'selected' if settings.send_type == 'manual' else '' }}>يدوي</option>
+                                    <option value="scheduled" {{ 'selected' if settings.send_type == 'scheduled' else '' }}>مجدول</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3" id="intervalDiv" style="{{ 'display: none;' if settings.send_type != 'scheduled' else '' }}">
+                                <label for="intervalSeconds" class="form-label">فترة الإرسال (بالثواني)</label>
+                                <input type="number" class="form-control" id="intervalSeconds"
+                                       value="{{ settings.interval_seconds or 3600 }}" min="60">
+                                <div class="form-text">الحد الأدنى: 60 ثانية</div>
+                            </div>
+
+                            <!-- حقل الوقت المحدد للإرسال المجدول -->
+                            <div class="mb-3" id="scheduledTimeDiv" style="{{ 'display: none;' if settings.send_type != 'scheduled' else '' }}">
+                                <label for="scheduledTime" class="form-label">
+                                    <i class="fas fa-clock me-2"></i>الوقت المحدد للإرسال
+                                </label>
+                                <input type="datetime-local" class="form-control" id="scheduledTime"
+                                       value="{{ settings.scheduled_time or '' }}">
+                                <div class="form-text">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    حدد التاريخ والوقت المطلوب للإرسال التلقائي
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <button type="submit" class="btn btn-success w-100">
+                                        <i class="fas fa-save me-2"></i>
+                                        حفظ الإعدادات
+                                    </button>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <button type="button" class="btn btn-primary w-100" id="sendNowBtn">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        إرسال الآن
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- أزرار التحكم -->
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-2">
+                                <button class="btn btn-warning w-100" id="startMonitoringBtn">
+                                    <i class="fas fa-play me-2"></i>
+                                    بدء المراقبة
+                                </button>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <button class="btn btn-danger w-100" id="stopMonitoringBtn" style="display: none;">
+                                    <i class="fas fa-stop me-2"></i>
+                                    إيقاف المراقبة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- سجل العمليات -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-list me-2"></i>
+                            سجل العمليات
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="operationsLog" class="log-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- وحدة التحكم -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-terminal me-2"></i>
+                            وحدة التحكم
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="consoleLog" class="console-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تحميل المكتبات -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <!-- PWA و Service Worker -->
+    <script>
+        // متغيرات PWA
+        const installAppBtn = document.getElementById('installAppBtn');
+
+        // تسجيل Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/static/sw.js')
+                    .then(function(registration) {
+                        console.log('✅ Service Worker registered successfully:', registration.scope);
+
+                        // التحقق من وجود تحديثات
+                        registration.addEventListener('updatefound', function() {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', function() {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // عرض إشعار التحديث
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch(function(err) {
+                        console.error('❌ Service Worker registration failed:', err);
+                    });
+            });
+        }
+
+        // معالجة حدث beforeinstallprompt
+        window.addEventListener('beforeinstallprompt', function(e) {
+            console.log('📱 PWA: Install prompt triggered');
+            e.preventDefault();
+            globalDeferredPrompt = e;
+
+            // إظهار زر التثبيت
+            installAppBtn.style.display = 'inline-block';
+
+            // تأثير لفت النظر
+            installAppBtn.classList.add('animate__animated', 'animate__pulse');
+        });
+
+        // معالجة النقر على زر التثبيت
+        installAppBtn.addEventListener('click', async function() {
+            if (!globalDeferredPrompt) {
+                showNotification('التطبيق مثبت بالفعل أو غير متاح للتثبيت', 'info');
+                return;
+            }
+
+            try {
+                // عرض نافذة التثبيت
+                globalDeferredPrompt.prompt();
+
+                // انتظار اختيار المستخدم
+                const { outcome } = await globalDeferredPrompt.userChoice;
+
+                if (outcome === 'accepted') {
+                    console.log('✅ PWA: User accepted the install prompt');
+                    showNotification('🎉 تم تثبيت التطبيق بنجاح!', 'success');
+
+                    // إخفاء زر التثبيت
+                    installAppBtn.style.display = 'none';
+                } else {
+                    console.log('❌ PWA: User dismissed the install prompt');
+                    showNotification('تم إلغاء التثبيت', 'warning');
+                }
+
+                globalDeferredPrompt = null;
+            } catch (error) {
+                console.error('❌ PWA: Error during installation:', error);
+                showNotification('حدث خطأ أثناء التثبيت', 'error');
+            }
+        });
+
+        // معالجة حدث التثبيت الناجح
+        window.addEventListener('appinstalled', function(e) {
+            console.log('🎉 PWA: App installed successfully');
+            showNotification('تم تثبيت التطبيق بنجاح! يمكنك الآن الوصول إليه من الشاشة الرئيسية', 'success');
+            installAppBtn.style.display = 'none';
+
+            // إرسال إحصائية التثبيت
+            if (window.gtag) {
+                gtag('event', 'pwa_install', {
+                    'event_category': 'PWA',
+                    'event_label': 'App Installed'
+                });
+            }
+        });
+
+        // دالة عرض إشعار التحديث
+        function showUpdateNotification() {
+            const updateDiv = document.createElement('div');
+            updateDiv.className = 'alert alert-info alert-dismissible fade show position-fixed';
+            updateDiv.style.cssText = 'top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: 400px;';
+            updateDiv.innerHTML = `
+                <strong>🔄 تحديث متاح!</strong>
+                <p class="mb-2">يتوفر إصدار جديد من التطبيق</p>
+                <button class="btn btn-sm btn-primary me-2" onclick="updateApp()">تحديث الآن</button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(updateDiv);
+        }
+
+        // دالة تحديث التطبيق
+        function updateApp() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(function(registration) {
+                    if (registration && registration.waiting) {
+                        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+
+        // التحقق من إمكانية التثبيت على iOS
+        function checkIOSInstall() {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone;
+
+            if (isIOS && !isStandalone) {
+                // عرض تعليمات التثبيت لـ iOS
+                const iosInstructions = document.createElement('div');
+                iosInstructions.className = 'alert alert-info mt-3';
+                iosInstructions.innerHTML = `
+                    <h6><i class="fab fa-apple"></i> للتثبيت على iOS:</h6>
+                    <small>
+                        1️⃣ اضغط على زر المشاركة <i class="fas fa-share"></i><br>
+                        2️⃣ اختر "إضافة إلى الشاشة الرئيسية"<br>
+                        3️⃣ اضغط "إضافة"
+                    </small>
+                `;
+                installAppBtn.parentNode.appendChild(iosInstructions);
+            }
+        }
+
+        // تشغيل فحص iOS عند تحميل الصفحة
+        window.addEventListener('load', checkIOSInstall);
+
+        // معالجة التنبيهات المخصصة
+        function showPWANotification(title, body, icon) {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification(title, {
+                    body: body,
+                    icon: icon || '/static/icons/icon-192x192.png',
+                    badge: '/static/icons/icon-72x72.png',
+                    vibrate: [100, 50, 100]
+                });
+            }
+        }
+
+        // طلب إذن التنبيهات
+        function requestNotificationPermission() {
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        showNotification('تم تفعيل التنبيهات بنجاح', 'success');
+                    }
+                });
+            }
+        }
+
+        // تفعيل طلب التنبيهات عند أول تفاعل
+        document.addEventListener('click', function() {
+            requestNotificationPermission();
+        }, { once: true });
+
+        console.log('✅ PWA: Scripts loaded successfully');
+
+        // =========================== 
+        // نظام التبديل بين المستخدمين - مبسط ومحسن
+        // ===========================
+        
+        var globalCurrentUserId = '{{ current_user.id }}';
+        var globalDeferredPrompt = null;
+        
+        console.log('✅ Multi-user system initialized');
+
+        // =========================== 
+        // نظام الانضمام التلقائي للمجموعات
+        // ===========================
+        
+        let extractedLinks = [];
+        
+        // معالجة نموذج الانضمام التلقائي
+        document.addEventListener('DOMContentLoaded', function() {
+            const autoJoinForm = document.getElementById('autoJoinForm');
+            const extractLinksBtn = document.getElementById('extractLinksBtn');
+            const startAutoJoinBtn = document.getElementById('startAutoJoinBtn');
+            const groupLinksInput = document.getElementById('groupLinks');
+            const extractedLinksContainer = document.getElementById('extractedLinksContainer');
+            const extractedLinksList = document.getElementById('extractedLinksList');
+            
+            // معالجة نقرة زر استخراج الروابط
+            if (autoJoinForm) {
+                autoJoinForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    extractLinks();
+                });
+            }
+            
+            // معالجة نقرة زر بدء الانضمام التلقائي
+            if (startAutoJoinBtn) {
+                startAutoJoinBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    startAutoJoin();
+                });
+            }
+        });
+        
+        // دالة استخراج الروابط
+        function extractLinks() {
+            const text = document.getElementById('groupLinks').value.trim();
+            
+            if (!text) {
+                showNotification('يرجى إدخال روابط المجموعات أولاً', 'warning');
+                return;
+            }
+            
+            showNotification('جاري استخراج الروابط...', 'info');
+            
+            fetch('/api/extract_group_links', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    text: text
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    extractedLinks = data.links || [];
+                    displayExtractedLinks(extractedLinks);
+                    
+                    if (extractedLinks.length > 0) {
+                        document.getElementById('startAutoJoinBtn').disabled = false;
+                        showNotification(`تم استخراج ${extractedLinks.length} رابط`, 'success');
+                    } else {
+                        showNotification('لم يتم العثور على روابط صالحة', 'warning');
+                    }
+                } else {
+                    showNotification(data.message || 'خطأ في استخراج الروابط', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error extracting links:', error);
+                showNotification('خطأ في الاتصال بالخادم', 'error');
+            });
+        }
+        
+        // دالة عرض الروابط المستخرجة
+        function displayExtractedLinks(links) {
+            const container = document.getElementById('extractedLinksContainer');
+            const list = document.getElementById('extractedLinksList');
+            
+            if (links.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            let html = `<strong>تم العثور على ${links.length} رابط:</strong><br><br>`;
+            
+            links.forEach((link, index) => {
+                const icon = link.type === 'invite' ? '🔗' : '📢';
+                html += `
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge bg-secondary me-2">${index + 1}</span>
+                        <span class="me-2">${icon}</span>
+                        <code class="text-break">${link.url}</code>
+                        <small class="text-muted ms-2">(${link.username})</small>
+                    </div>
+                `;
+            });
+            
+            list.innerHTML = html;
+            container.style.display = 'block';
+        }
+        
+        // دالة بدء الانضمام التلقائي
+        function startAutoJoin() {
+            if (extractedLinks.length === 0) {
+                showNotification('يرجى استخراج الروابط أولاً', 'warning');
+                return;
+            }
+            
+            // تعطيل الزر لمنع النقر المتكرر
+            const startBtn = document.getElementById('startAutoJoinBtn');
+            startBtn.disabled = true;
+            startBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>جاري الانضمام...';
+            
+            // إظهار حالة الانضمام
+            document.getElementById('joinStatusContainer').style.display = 'block';
+            document.getElementById('joinStatusText').textContent = 'بدء الانضمام التلقائي...';
+            
+            showNotification(`بدء الانضمام التلقائي لـ ${extractedLinks.length} مجموعة...`, 'info');
+            
+            fetch('/api/start_auto_join', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    links: extractedLinks,
+                    delay: 3 // تأخير 3 ثواني بين المجموعات
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                } else {
+                    showNotification(data.message || 'خطأ في بدء الانضمام التلقائي', 'error');
+                    resetAutoJoinButton();
+                }
+            })
+            .catch(error => {
+                console.error('Error starting auto join:', error);
+                showNotification('خطأ في الاتصال بالخادم', 'error');
+                resetAutoJoinButton();
+            });
+        }
+        
+        // دالة إعادة تعيين زر الانضمام التلقائي
+        function resetAutoJoinButton() {
+            const startBtn = document.getElementById('startAutoJoinBtn');
+            if (startBtn) {
+                startBtn.disabled = false;
+                startBtn.innerHTML = '<i class="fas fa-play me-2"></i>بدء الانضمام التلقائي';
+            }
+            
+            const statusContainer = document.getElementById('joinStatusContainer');
+            if (statusContainer) {
+                statusContainer.style.display = 'none';
+            }
+        }
+        
+        // معالجة أحداث Socket.IO للانضمام التلقائي
+        if (typeof socket !== 'undefined') {
+            
+            // تقدم الانضمام
+            socket.on('join_progress', function(data) {
+                console.log('Join progress:', data);
+                const statusText = document.getElementById('joinStatusText');
+                if (statusText) {
+                    statusText.textContent = `جاري الانضمام ${data.current}/${data.total}: ${data.link}`;
+                }
+            });
+            
+            // تحديث الإحصائيات
+            socket.on('join_stats', function(data) {
+                console.log('Join stats:', data);
+                document.getElementById('joinSuccessCount').textContent = data.success || 0;
+                document.getElementById('joinFailCount').textContent = data.fail || 0;
+                document.getElementById('alreadyJoinedCount').textContent = data.already_joined || 0;
+            });
+            
+            // اكتمال الانضمام التلقائي
+            socket.on('auto_join_completed', function(data) {
+                console.log('Auto join completed:', data);
+                
+                resetAutoJoinButton();
+                
+                showNotification(
+                    `تم الانتهاء! النجح: ${data.success}, فشل: ${data.fail}, منضم مسبقاً: ${data.already_joined}`,
+                    'info'
+                );
+                
+                // إضافة تأثير الاحتفال
+                if (data.success > 0) {
+                    showNotification(`🎉 تم الانضمام بنجاح لـ ${data.success} مجموعة جديدة!`, 'success');
+                }
+            });
+        }
+        
+        console.log('✅ Auto join system initialized');
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+2025-09-18 23:11:29,469 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-18 23:11:29,609 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-18 23:11:30,785 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:32,163 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:33,735 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-18 23:11:35,194 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-18 23:11:36,629 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-18 23:11:38,271 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-18 23:11:39,605 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-18 23:11:40,961 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-18 23:11:42,389 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-18 23:11:43,827 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-18 23:11:45,129 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:46,464 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-18 23:11:47,901 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-18 23:11:49,284 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-18 23:11:50,711 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-18 23:11:52,033 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:53,363 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-18 23:11:54,694 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:56,038 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:57,379 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:11:58,755 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-18 23:12:00,091 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:12:01,388 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:12:02,699 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-18 23:12:04,125 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-18 23:12:05,128 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-18 23:12:05,129 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-19 10:58:19,147 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-19 10:58:19,288 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-19 10:58:20,668 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:21,997 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:23,570 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-19 10:58:25,044 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-19 10:58:26,463 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-19 10:58:28,164 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-19 10:58:29,474 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 10:58:30,788 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 10:58:32,218 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-19 10:58:33,645 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-19 10:58:35,174 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:36,480 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 10:58:37,800 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-19 10:58:39,203 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-19 10:58:40,672 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-19 10:58:41,972 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:43,277 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 10:58:44,631 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:45,965 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:47,349 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:48,732 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-19 10:58:50,107 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:51,535 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:52,865 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 10:58:54,278 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-19 10:58:55,280 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-19 10:58:55,281 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:05:27,861 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-19 11:05:28,001 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:05:29,272 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:30,657 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:32,416 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-19 11:05:33,826 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-19 11:05:35,255 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-19 11:05:36,862 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-19 11:05:38,171 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:05:39,512 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:05:41,000 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-19 11:05:42,493 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-19 11:05:43,847 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:45,177 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:05:46,610 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-19 11:05:48,067 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-19 11:05:49,564 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-19 11:05:50,887 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:52,240 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:05:53,700 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:55,118 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:56,571 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:05:57,980 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-19 11:05:59,314 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:06:00,741 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:06:02,063 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:06:03,572 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-19 11:06:04,574 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-19 11:06:04,574 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:09:04,845 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-19 11:09:04,983 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:09:06,387 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:07,704 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:09,379 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-19 11:09:10,973 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-19 11:09:12,407 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-19 11:09:14,116 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-19 11:09:15,426 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:09:16,755 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:09:18,159 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-19 11:09:19,566 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-19 11:09:20,867 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:22,167 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:09:23,527 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-19 11:09:24,987 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-19 11:09:26,601 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-19 11:09:28,021 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:29,319 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:09:30,625 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:31,927 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:33,545 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:34,950 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-19 11:09:36,262 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:37,564 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:38,878 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:09:40,371 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-19 11:09:41,373 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-19 11:09:41,374 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:12:41,528 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-19 11:12:41,668 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:12:42,804 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:12:44,108 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:12:45,714 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-19 11:12:47,152 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-19 11:12:48,555 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-19 11:12:50,107 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-19 11:12:51,412 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:12:52,726 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:12:54,325 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-19 11:12:55,796 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-19 11:12:57,217 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:12:58,611 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:13:00,134 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-19 11:13:01,557 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-19 11:13:03,135 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-19 11:13:04,599 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:05,909 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:13:07,358 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:08,680 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:10,002 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:11,406 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-19 11:13:12,721 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:14,035 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:15,534 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:13:16,982 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-19 11:13:17,984 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-19 11:13:17,984 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:16:18,169 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-09-19 11:16:18,308 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-09-19 11:16:19,488 - __main__ - ERROR - فشل الإرسال إلى kormataifuni: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:20,811 - __main__ - ERROR - فشل الإرسال إلى sho2200: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:22,401 - __main__ - INFO - تم الإرسال بنجاح إلى: skdjfu
+2025-09-19 11:16:23,934 - __main__ - INFO - تم الإرسال بنجاح إلى: Maths_genius2
+2025-09-19 11:16:25,479 - __main__ - INFO - تم الإرسال بنجاح إلى: mtager545
+2025-09-19 11:16:27,169 - __main__ - INFO - تم الإرسال بنجاح إلى: sultanu1999
+2025-09-19 11:16:28,492 - __main__ - ERROR - فشل الإرسال إلى salla_pool: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:16:29,792 - __main__ - ERROR - فشل الإرسال إلى Taif64: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:16:31,344 - __main__ - INFO - تم الإرسال بنجاح إلى: groupIAU
+2025-09-19 11:16:32,877 - __main__ - INFO - تم الإرسال بنجاح إلى: universty_taif11
+2025-09-19 11:16:34,240 - __main__ - ERROR - فشل الإرسال إلى ksucpy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:35,575 - __main__ - ERROR - فشل الإرسال إلى Tu_English2: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:16:36,936 - __main__ - INFO - تم الإرسال بنجاح إلى: https://t.me/+7j-xqCFEiYE5NTc0
+2025-09-19 11:16:38,443 - __main__ - INFO - تم الإرسال بنجاح إلى: bsfmisk
+2025-09-19 11:16:39,969 - __main__ - INFO - تم الإرسال بنجاح إلى: httpsLjsIIb3S3nIwMzVk
+2025-09-19 11:16:41,457 - __main__ - ERROR - فشل الإرسال إلى bdydbeu: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:42,818 - __main__ - ERROR - فشل الإرسال إلى sdgghjklv: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by SendMessageRequest)
+2025-09-19 11:16:44,128 - __main__ - ERROR - فشل الإرسال إلى DigitalSAMAA: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:45,508 - __main__ - ERROR - فشل الإرسال إلى tabuk_2022: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:46,898 - __main__ - ERROR - فشل الإرسال إلى KearneyMiddleEast: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:48,284 - __main__ - INFO - تم الإرسال بنجاح إلى: jazanh12
+2025-09-19 11:16:49,614 - __main__ - ERROR - فشل الإرسال إلى YouthGrowthProgramYGP: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:50,950 - __main__ - ERROR - فشل الإرسال إلى MonffizAcademy: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:52,259 - __main__ - ERROR - فشل الإرسال إلى nasdygsnnz: You can't write in this chat (caused by SendMessageRequest)
+2025-09-19 11:16:53,707 - __main__ - INFO - تم الإرسال بنجاح إلى: Takamol_GDP
+2025-09-19 11:16:54,709 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-09-19 11:16:54,710 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
